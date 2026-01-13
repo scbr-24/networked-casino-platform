@@ -55,7 +55,7 @@ python3 cliente/main.py
 
 ## Execution and Files Structure
 
-The program runs in the terminal from the T4 folder and through the ```servidor/main.py``` and ```cliente/main.py``` commands. A single active server can handle any number of connected players, but only one active instance of each game at a time. Blackjack will start with exactly 4 players connected. Aviator will start after 3 bets are placed, by default (more details on its section). The program follows PEP8 style conventions. 
+The program runs in the terminal from the T4 folder and through the ```servidor/main.py``` and ```cliente/main.py``` commands. A single active server can handle any number of connected players, but only one active instance of each game at a time. Blackjack will start with exactly 4 players connected. Aviator will start after 3 bets are placed by default (more details on its section). The program follows PEP8 style conventions. 
 
     |-T4/
     |   |
@@ -161,7 +161,7 @@ The program runs in the terminal from the T4 folder and through the ```servidor/
 ### Main Window
 
 * Shows the username, money balance of the user and the last five global net profits on the server. It also contains the buttons for Blackjack, Aviator and a money deposit.
-* The limits of the money deposit are hard-coded and upper-bounded, as well as the maximum user balance.
+* The upper-bounds of the money deposit are stored in the ```parametros.py```file, as well as the maximum user balance.
 
 ## Games
 
@@ -174,7 +174,7 @@ The program runs in the terminal from the T4 folder and through the ```servidor/
 ### Aviator
 
 * The rules and phases of the game are in the specifications file. There isn't a limit on the amount of players that can get into the game, however, they are in a competing state to each other as the first 3 players that place a bet will play in the round, while the rest of the players will return to the main window. 
-* As opposed to the Blackjack interface, Aviator can handle any number of connected players in the game because each client's window is consistent across rounds, apart from the players bar which has scroll functionality on a need-to-use basis. The default limit of 3 bets is hard-coded and can be changed in ```T4/servidor/juegos/logica_aviator.py```, line 96.
+* As opposed to the Blackjack interface, Aviator can handle any number of connected players in the game because each client's window is consistent across rounds, apart from the players bar which has a scroll functionality on a need-to-use basis. The default limit of 3 bets is hard-coded and can be changed in ```T4/servidor/juegos/logica_aviator.py```, line 96.
 * The global round bets and results will be available for any player to see at the left side of their window in the players bar. This tracking is reset after the round ends, but the net profits and deposits are persistent as they are saved in the .csv files and shown in everyone's main window. 
 * The flight pattern and exponential multiplier are calculated before the round begins, so the time the round will last is unknown but pre-determined beforehand. 
 
@@ -194,5 +194,5 @@ The program runs in the terminal from the T4 folder and through the ```servidor/
 
 ## A Note on the Context of the Project
 
-As this was the final project of the course Advanced Programming (PUC, Chile), the file structure, naming conventions, as well as some of the design and coding choices, were made because of specifications constraints, and also thinking about the effortless correction of the assignment. Therefore, most variables, functions, classes, attributes and so on, have an Spanish name. The original README and the specifications file are also written in Spanish. For the sake of transparency, and in case something's not clear from this document, the original README file is uploaded and located at ```T4/README.md```, but beware of the language barrier.
+As this was the final project of the Advanced Programming course (PUC, Chile), the file structure, naming conventions, as well as some of the design and coding choices, were made because of specifications constraints, and also thinking about the effortless correction of the assignment. Therefore, most variables, functions, classes, attributes and so on, have an Spanish name. The original README and the specifications file are also written in Spanish. For the sake of transparency, and in case something's not clear from this document, the original README file is uploaded and located at ```T4/README.md```.
 
